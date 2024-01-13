@@ -13,7 +13,7 @@ print(second_number)
 print(third_number)
 print(fourth_number)
 
-# Людяний варіант, де не потрібно ломати мозок та сивіти )))
+#Людяний варіант, де не потрібно ломати мозок та сивіти )))
 user_number = input("Enter a four-digit number:")
 for num in user_number:
     print(int(num))
