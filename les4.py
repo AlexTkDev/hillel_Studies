@@ -6,6 +6,7 @@
 # my_list = [i for i in my_list if i != 0] + temp_list
 # print(my_list)
 
+
 #           option two
 #
 # my_list = [1, 0, 13, 0, 0, 0, 5, 9, 9, 9, 9, 0, 0, 0, 0, 6, 7, 5, 4, 3, 6, 7, 5, 4, 3, 0, 6, 7, 5,
@@ -18,13 +19,13 @@
 #               ---------------- EX 2 -----------------
 #
 my_list = [0, 1, 7, 2, 4, 8]
-res = 0
+result = 0
 
 if len(my_list) == 0:
-    res = 0
+    result = 0
 else:
     for i in my_list[::2]:
-        res += i
-    res *= my_list[-1]
+        result += i
+    result *= my_list[-1]
 
-print(res)
+print(result)
