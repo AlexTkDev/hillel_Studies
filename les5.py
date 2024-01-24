@@ -54,8 +54,6 @@ value_name = "_"
 
 literal = '''!"#$%&'()*+,-./:;<=>?@[]{}\\^`|~'''
 kw_list = kwlist
-# print(value_name.find(" "))
-
 
 if not value_name[0].isdigit() and not value_name[0].isupper():
     if not value_name.isdigit() and not value_name.isupper():
