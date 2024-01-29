@@ -1,5 +1,5 @@
 # #                   ------------------- EX 1 --------------------
-
+#
 # users = [{"name": "John", "age": 15},
 #          {"name": "Jack", "age": 45},
 #          {"name": "Alex", "age": 35},
@@ -25,29 +25,66 @@
 
 
 #                   ------------------- EX 2 --------------------
+#
+# my_dict_1 = {1: 1, 22: 2, 3: 3, 4: 4, 5: 5, 67: 6}
+# my_dict_2 = {1: 1, 9: 2, 3: 10, 4: 4, 5: 8, 6: 7}
+#
+# in_two_dict = [key for key in my_dict_1.keys() if key in my_dict_2]
+#
+# only_first_keys = [key for key in my_dict_1.keys() if key not in my_dict_2]
+#
+# only_in_the_first = {key: my_dict_1[key] for key in my_dict_1.keys() if key not in my_dict_2}
+#
+# merged_dict = {}
+# for key, value_1 in my_dict_1.items():
+#     if key in my_dict_2:
+#         merged_dict[key] = [value_1, my_dict_2[key]]
+#     else:
+#         merged_dict[key] = value_1
+#
+# for key, value_2 in my_dict_2.items():
+#     if key not in my_dict_1:
+#         merged_dict[key] = value_2
+#
+# print(f"a) Список із ключів, які є в обох словниках: {in_two_dict}\n"
+#       f"б) Список із ключів, які є у першому, але немає у другому словнику: {only_first_keys}\n"
+#       f"в) Значення для ключів, які є в першому, але немає в другому словнику: {only_in_the_first}\n"
+#       f"г) Об'єднання двох словників: {merged_dict}"
+#       )
 
+
+# option two
 my_dict_1 = {1: 1, 22: 2, 3: 3, 4: 4, 5: 5, 67: 6}
 my_dict_2 = {1: 1, 9: 2, 3: 10, 4: 4, 5: 8, 6: 7}
 
-in_two_dict = [key for key in my_dict_1.keys() if key in my_dict_2]
+# a
+in_two_dict = set(my_dict_1.keys()) & set(my_dict_2.keys())
+list_in_two_dict = list(in_two_dict)
+print(list_in_two_dict)
 
-only_first_keys = [key for key in my_dict_1.keys() if key not in my_dict_2]
+# b
+only_first_keys = set(my_dict_1.keys()) - set(my_dict_2.keys())
+list_in_only_first_keys = list(only_first_keys)
+print(list_in_only_first_keys)
 
-only_in_the_first = {key: my_dict_1[key] for key in my_dict_1.keys() if key not in my_dict_2}
+# c
+only_in_the_first = set(my_dict_1).difference(my_dict_2)
+new_keys = {}
+for key, value in my_dict_1.items():
+    if key in only_first_keys:
+        new_keys[key] = value
+print(new_keys)
 
+# d
 merged_dict = {}
-for key, value_1 in my_dict_1.items():
-    if key in my_dict_2:
-        merged_dict[key] = [value_1, my_dict_2[key]]
+new_set = set(my_dict_1).union(set(my_dict_2))
+
+for key in new_set:
+    if key in my_dict_1 and key in my_dict_2:
+        merged_dict[key] = [my_dict_1[key], my_dict_2[key]]
+    elif key not in my_dict_2:
+        merged_dict[key] = my_dict_1[key]
     else:
-        merged_dict[key] = value_1
+        merged_dict[key] = my_dict_2[key]
 
-for key, value_2 in my_dict_2.items():
-    if key not in my_dict_1:
-        merged_dict[key] = value_2
-
-print(f"a) Список із ключів, які є в обох словниках: {in_two_dict}\n"
-      f"б) Список із ключів, які є у першому, але немає у другому словнику: {only_first_keys}\n"
-      f"в) Значення для ключів, які є в першому, але немає в другому словнику: {only_in_the_first}\n"
-      f"г) Об'єднання двох словників: {merged_dict}"
-      )
+print(merged_dict)
