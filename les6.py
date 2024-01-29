@@ -1,5 +1,5 @@
 # #                   ------------------- EX 1 --------------------
-#
+
 # users = [{"name": "John", "age": 15},
 #          {"name": "Jack", "age": 45},
 #          {"name": "Alex", "age": 35},
@@ -18,9 +18,9 @@
 # md_age = sum(age["age"] for age in users) / len(users)
 # middle_age = round(md_age, 2)
 #
-# print(f"The names is young people {jr_names}\n"
-#       f"The max length name is {middle_age}\n"
-#       f"The middle age is {middle_age}"
+# print(f"а) Ім'я наймолодшої людини: {jr_names}\n"
+#       f"б) Найдовше ім'я: {longest_name}\n"
+#       f"в) Середній вік усіх людей = {middle_age}"
 #       )
 
 
@@ -47,7 +47,7 @@ for key, value_2 in my_dict_2.items():
         merged_dict[key] = value_2
 
 print(f"a) Список із ключів, які є в обох словниках: {in_two_dict}\n"
-      f"б) Список із ключів, які є у першому, але немає у другому словнику: {only_first_keys}\n" 
+      f"б) Список із ключів, які є у першому, але немає у другому словнику: {only_first_keys}\n"
       f"в) Значення для ключів, які є в першому, але немає в другому словнику: {only_in_the_first}\n"
       f"г) Об'єднання двох словників: {merged_dict}"
       )
