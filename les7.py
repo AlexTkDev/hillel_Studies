@@ -18,7 +18,7 @@
 #         new_text = text[0].upper() + text[1:]
 #     else:
 #         new_text = text
-#
+
 #     if text[-1] != ".":
 #         new_text += "."
 #
