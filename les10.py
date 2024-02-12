@@ -14,7 +14,6 @@ def some_gen(begin, end, func):
         yield begin
         begin = func(begin)
 
-
 from inspect import isgenerator
 
 gen = some_gen(2, 4, pow)
