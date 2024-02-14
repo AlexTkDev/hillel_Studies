@@ -1,11 +1,15 @@
 #                     ------------------------ EX 1 -----------------------
 
 def popular_words(text, words):
+    # text_list = text.lower().split()
+    # word_count = {word: 0 for word in words}
+    # for word in text_list:
+    #     if word in word_count:
+    #         word_count[word] += 1
+
+#or
     text_list = text.lower().split()
-    word_count = {word: 0 for word in words}
-    for word in text_list:
-        if word in word_count:
-            word_count[word] += 1
+    word_count = {word: text_list.count(word) for word in words}
 
     return word_count
 
@@ -21,13 +25,20 @@ from typing import Union
 
 
 def difference(*args) -> Union[int, float]:
-    if len(args) == 0:
-        return 0
+    # if len(args) == 0:
+    #     return 0
+    #
+    # min_elem = min(args)
+    # max_elem = max(args)
+    # result = (max_elem - min_elem)
+    # return round(result, 2)
 
-    min_elem = min(args)
-    max_elem = max(args)
-    result = (max_elem - min_elem)
-    return round(result, 2)
+#or
+    if args:
+        result = round(max(args) - min(args), 2)
+        return result
+
+    return 0
 
 
 assert difference(1, 2, 3) == 2, 'Test1'
