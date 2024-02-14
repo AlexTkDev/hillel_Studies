@@ -31,6 +31,7 @@ print('Ok!')
 
 
 def is_even(number):
+    # print(bin(number))
     return (number & 1) == 0
 
 
