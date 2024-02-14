@@ -8,9 +8,9 @@ def prime_generator(end):
     # return is_prime
 
     # # option 2
-    def is_prime(x):
-        for i in range(2, int(x ** 0.5) + 1):
-            if x % i == 0:
+    def is_prime(val):
+        for i in range(2, int(val ** 0.5) + 1):
+            if val % i == 0:
                 return False
         return True
 
