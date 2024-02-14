@@ -16,6 +16,7 @@ def encode_text(input_text):
         secret_text += dictionary[new_pos]
     return secret_text
 
+
 encoded_result = encode_text(text)
 print(encoded_result)
 
@@ -33,6 +34,7 @@ def decode_text(encoded_text):
             new_pos = (index - shift_left + len(dictionary)) % len(dictionary)
         secret_text += dictionary[new_pos]
     return secret_text
+
 
 decoded_result = decode_text(encoded_result)
 print(f"А этот текст мы расшифровали:\n {decoded_result}")
