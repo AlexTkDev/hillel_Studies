@@ -32,7 +32,14 @@ print('Ok!')
 
 def is_even(number):
     # print(bin(number))
-    return (number & 1) == 0
+    # return (number & 1) == 0
+
+    # or
+    str_number = str(number)
+    if str_number[-1] in ("2", "4", "6", "8", "0"):
+        return True
+    else:
+        return False
 
 
 assert is_even(2494563894038 ** 2) == True, 'Test1'
