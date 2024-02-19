@@ -37,7 +37,7 @@ class Purchase:
         # return f"User: {self.user}\nItems:\n{tmp}"
 
         # or
-        tmp = '\n'.join([f"{item.name}: {cnt} pcs." for item, cnt in self.products.items()])
+        tmp = '\n'.join([f"{key.name}: {value} pcs." for key, value in self.products.items()])
         return f"User: {self.user}\nItems:\n{tmp}"
 
     def get_total(self):
