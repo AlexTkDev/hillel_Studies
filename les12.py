@@ -30,6 +30,15 @@ class Purchase:
     def add_item(self, item, cnt):
         self.products[item] = cnt
 
+    def get_total(self):
+        # self.total = 0
+        # for key, val in self.products.items():
+        #     self.total += key.price * val
+        # return self.total
+
+        # or
+        return sum(key.price * value for key, value in self.products.items())
+
     def __str__(self):
         # tmp = ''
         # for key, value in self.products.items():
@@ -39,15 +48,6 @@ class Purchase:
         # or
         tmp = '\n'.join([f"{key.name}: {value} pcs." for key, value in self.products.items()])
         return f"User: {self.user}\nItems:\n{tmp}"
-
-    def get_total(self):
-        # self.total = 0
-        # for key, val in self.products.items():
-        #     self.total += key.price * val
-        # return self.total
-
-        # or
-        return sum(key.price * value for key, value in self.products.items())
 
 
 lemon = Item('lemon', 5, "yellow", "small", )
