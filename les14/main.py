@@ -2,8 +2,6 @@ from group import Group
 from create_Student import Student
 from ERROR_MaxAmountException import MaxAmountException
 
-
-
 st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
 st2 = Student('Female', 25, 'Liza', 'Taylor', 'AN145')
 # st3 = Student('Female', 45, 'Ed', 'Mon', 'AN146')
@@ -31,7 +29,7 @@ try:
     # gr.add_student(st11)
 except MaxAmountException as err:
     print(f"[*] {err.get_exception_message()}!\n"
-          f"[*] --> The student {err.first_name} {err.name} 11 on the list,"
+          f"[*] --> The student: {err.first_name} {err.name} to 11 on the list,"
           f" create a new group and add this student.")
 
 print(gr)
@@ -39,4 +37,4 @@ assert gr.find_student('Jobs') == st1  # 'Steve Jobs'
 assert gr.find_student('Jobs2') is None
 
 gr.delete_student('Taylor')
-print(gr) # Only one student
+print(gr)  # Only one student

@@ -15,7 +15,7 @@ class Group:
 
         if self.counter == 10:
             raise MaxAmountException(
-                f"Max Amount Students Exceeded", student.last_name, student.first_name)
+                "Max Amount Students Exceeded", student.last_name, student.first_name)
         else:
             self.group.add(student)
 
