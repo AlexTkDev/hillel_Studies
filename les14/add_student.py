@@ -1,4 +1,4 @@
-from create_human import Human
+from add_human import Human
 
 
 class Student(Human):

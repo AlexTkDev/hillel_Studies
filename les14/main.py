@@ -1,5 +1,5 @@
 from group import Group
-from create_student import Student
+from add_student import Student
 from ERROR_MaxAmountException import MaxAmountException
 
 st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
