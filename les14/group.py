@@ -4,16 +4,16 @@ from ERROR_MaxAmountException import MaxAmountException
 class Group:
 
     def __init__(self, number):
-        self.counter = None
+        self._counter = None
         self.number = number
         self.group = set()
 
     def add_student(self, student):
-        self.counter = 0
+        self._counter = 0
         for _ in self.group:
-            self.counter += 1
+            self._counter += 1
 
-        if self.counter == 10:
+        if self._counter == 10:
             raise MaxAmountException(
                 "Max Amount Students Exceeded", student.last_name, student.first_name)
         else:
