@@ -7,6 +7,16 @@ class Student(Human):
         super().__init__(gender, age, first_name, last_name)
         self.record_book = record_book
 
+    def __hash__(self):
+        return hash(str(self))
+
+    def __eq__(self, other):
+        return Student(self.record_book == other.record_book,
+                       self.first_name == other.first_name,
+                       self.last_name == other.last_name,
+                       self.age == other.age,
+                       self.gender == other.gender)
+
     def __str__(self):
         return (f'{self.record_book}: {self.first_name} {self.last_name}'
                 f', age is {self.age}, gender is {self.gender}\n')
