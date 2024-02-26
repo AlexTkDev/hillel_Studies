@@ -12,7 +12,7 @@ st7 = Student('Female', 23, 'Alex', 'Smith', 'AN148')
 st8 = Student('Male', 22, 'Oz', 'Rider', 'AN149')
 st9 = Student('Female', 34, 'Leyla', 'Fill', 'AN148')
 st10 = Student('Male', 32, 'Sam', 'Daytona', 'AN155')
-st11= Student('Male', 33, 'Ros', 'Geller', 'AN1455')
+st11 = Student('Male', 33, 'Ros', 'Geller', 'AN1455')
 
 gr = Group('PD1')
 try:
