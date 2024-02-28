@@ -20,8 +20,8 @@ class Student(Human):
         self.record_book = record_book
 
     def __str__(self):
-        return (f'{self.record_book}: {self.first_name} {self.last_name}'
-                f', age is {self.age}, gender is {self.gender}\n')
+        rsp = super().__str__()
+        return f'{self.record_book}: {rsp}\n'
 
 
 class Group:
@@ -34,14 +34,15 @@ class Group:
         self.group.add(student)
 
     def delete_student(self, last_name):
-        for student in self.group:
-            if student.last_name == last_name:
-                return self.group.remove(student)
+        student = self.find_student(last_name)
+        if student is not None:
+            return self.group.remove(student)
 
     def find_student(self, last_name):
         for student in self.group:
             if student.last_name == last_name:
                 return student
+        return None
 
     def __str__(self):
         all_students = ''
@@ -67,60 +68,60 @@ gr.delete_student('Taylor')  # No error!
 
 
 # # -------------------------- EX 2 -------------------------
-#
-# class Counter:
-#
-#     def __init__(self, current=1, min_value=0, max_value=10):
-#         self.current = current
-#         self.min_value = min_value
-#         self.max_value = max_value
-#
-#     def set_current(self, start):
-#         self.current = start
-#
-#     def set_max(self, max_max):
-#         self.max_value = max_max
-#
-#     def set_min(self, min_min):
-#         self.min_value = min_min
-#
-#     def step_up(self):
-#         if self.current == self.max_value:
-#             raise ValueError(f"Reached maximum value = {self.max_value}")
-#         else:
-#             self.current += 1
-#         return self.current
-#
-#     def step_down(self):
-#         if self.current == self.min_value:
-#             raise ValueError(f"Reached minimum value = {self.min_value}")
-#         else:
-#             self.current -= 1
-#         return self.min_value
-#
-#     def get_current(self):
-#         return self.current
-#
-#
-# counter = Counter()
-# counter.set_current(7)
-# counter.step_up()
-# counter.step_up()
-# counter.step_up()
-# assert counter.get_current() == 10, 'Test1'
-# try:
-#     counter.step_up()  # ValueError
-# except ValueError as e:
-#     print(e)  # Досягнуто максимуму
-# assert counter.get_current() == 10, 'Test2'
-#
-# counter.set_min(7)
-# counter.step_down()
-# counter.step_down()
-# counter.step_down()
-# assert counter.get_current() == 7, 'Test3'
-# try:
-#     counter.step_down()  # ValueError
-# except ValueError as e:
-#     print(e)  # Досягнуто мінімуму
-# assert counter.get_current() == 7, 'Test4'
+
+class Counter:
+
+    def __init__(self, current=1, min_value=0, max_value=10):
+        self.current = current
+        self.min_value = min_value
+        self.max_value = max_value
+
+    def set_current(self, start):
+        self.current = start
+
+    def set_max(self, max_max):
+        self.max_value = max_max
+
+    def set_min(self, min_min):
+        self.min_value = min_min
+
+    def step_up(self):
+        if self.current == self.max_value:
+            raise ValueError(f"Reached maximum value = {self.max_value}")
+        else:
+            self.current += 1
+        return self.current
+
+    def step_down(self):
+        if self.current == self.min_value:
+            raise ValueError(f"Reached minimum value = {self.min_value}")
+        else:
+            self.current -= 1
+        return self.min_value
+
+    def get_current(self):
+        return self.current
+
+
+counter = Counter()
+counter.set_current(7)
+counter.step_up()
+counter.step_up()
+counter.step_up()
+assert counter.get_current() == 10, 'Test1'
+try:
+    counter.step_up()  # ValueError
+except ValueError as e:
+    print(e)  # Досягнуто максимуму
+assert counter.get_current() == 10, 'Test2'
+
+counter.set_min(7)
+counter.step_down()
+counter.step_down()
+counter.step_down()
+assert counter.get_current() == 7, 'Test3'
+try:
+    counter.step_down()  # ValueError
+except ValueError as e:
+    print(e)  # Досягнуто мінімуму
+assert counter.get_current() == 7, 'Test4'

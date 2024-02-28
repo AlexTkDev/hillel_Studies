@@ -18,5 +18,5 @@ class Student(Human):
                        self.gender == other.gender)
 
     def __str__(self):
-        return (f'{self.record_book}: {self.first_name} {self.last_name}'
-                f', age is {self.age}, gender is {self.gender}\n')
+        resp = super().__str__()
+        return f'{self.record_book}: {resp}\n'

@@ -20,14 +20,15 @@ class Group:
             self.group.add(student)
 
     def delete_student(self, last_name):
-        for student in self.group:
-            if student.last_name == last_name:
-                return self.group.remove(student)
+        student = self.find_student(last_name)
+        if student is not None:
+            return self.group.remove(student)
 
     def find_student(self, last_name):
         for student in self.group:
             if student.last_name == last_name:
                 return student
+        return None
 
     def __str__(self):
         all_students = ''
