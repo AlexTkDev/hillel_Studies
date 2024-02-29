@@ -84,6 +84,7 @@ assert r2.get_square == 18, 'Test2'
 
 r3 = r1 + r2
 print("R3 -->", r3)
+assert r3.get_square == 26, 'Test3'
 
 r4 = r1 * 4
 print("R4 -->", r4)
