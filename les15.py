@@ -10,24 +10,28 @@ class Rectangle:
     def get_square(self):
         return self.width * self.height
 
-    def get_area(self):
-        return self.get_square()
-
     def __eq__(self, other):
         return self.get_square() == other.get_square()
 
     def __add__(self, other):
-        if isinstance(other, Rectangle):
-            print("__add__", self, other)
-            return Rectangle(self.get_area() + other.get_area(),
-                             self.get_area() + other.get_area())
+        # _temp_width = 1
+        # _temp_height = self.get_square() + other.get_square()
+        # return Rectangle(_temp_width, _temp_height)
+
+        #or
+        return Rectangle(1, self.get_square()+other.get_square())
+
 
     def __mul__(self, n):
-        if isinstance(n, numbers.Real):
-            return Rectangle(self.width * n / 2, self.height * n / 2)
+        # _temp_width = self.width * n
+        # _temp_height = self.height
+        # return Rectangle(_temp_width, _temp_height)
+
+        #or
+        return Rectangle(self.width, n*self.height)
 
     def __str__(self):
-        return f"Rectangle({self.width}, {self.height})"
+        return f"Rectangle [width= {self.width},height= {self.height}, square= {self.get_square()}]"
 
 
 r1 = Rectangle(2, 4)
@@ -40,4 +44,5 @@ print("R3 -->", r3)
 assert r3.get_square() == 26, 'Test3'
 
 r4 = r1 * 4
+print("R4 -->", r4)
 assert r4.get_square() == 32, 'Test4'
