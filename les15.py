@@ -18,17 +18,16 @@ class Rectangle:
         # _temp_height = self.get_square() + other.get_square()
         # return Rectangle(_temp_width, _temp_height)
 
-        #or
-        return Rectangle(1, self.get_square()+other.get_square())
-
+        # or
+        return Rectangle(1, self.get_square() + other.get_square())
 
     def __mul__(self, n):
         # _temp_width = self.width * n
         # _temp_height = self.height
         # return Rectangle(_temp_width, _temp_height)
 
-        #or
-        return Rectangle(self.width, n*self.height)
+        # or
+        return Rectangle(self.width, n * self.height)
 
     def __str__(self):
         return f"Rectangle [width= {self.width},height= {self.height}, square= {self.get_square()}]"
