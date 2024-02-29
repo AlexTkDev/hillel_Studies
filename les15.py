@@ -87,3 +87,4 @@ print("R3 -->", r3)
 
 r4 = r1 * 4
 print("R4 -->", r4)
+assert r4.get_square == 32, 'Test4'
