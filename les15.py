@@ -19,7 +19,11 @@ class Rectangle:
         # return Rectangle(_temp_width, _temp_height)
 
         # or
-        return Rectangle(1, self.get_square() + other.get_square())
+        # return Rectangle(1, self.get_square() + other.get_square())
+
+        # or
+        combined_area = self.width * self.height + other.width * other.height
+        return Rectangle(combined_area ** 0.5, combined_area / (combined_area ** 0.5))
 
     def __mul__(self, n):
         # _temp_width = self.width * n
