@@ -188,6 +188,7 @@ class Box:
     def __ne__(self, other):
         return not self == other
 
+
 box_a = Box(1, 2, 3)
 box_b = Box(1, 2, 3)
 print(box_a >= box_b)
