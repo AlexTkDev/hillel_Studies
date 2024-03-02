@@ -1,3 +1,6 @@
+MAX_STUDENT_ERROR_MESSAGE = "Max Amount Students Exceeded"
+
+
 class MaxAmountException(Exception):
     def __init__(self, message, name, first_name):
         super().__init__()

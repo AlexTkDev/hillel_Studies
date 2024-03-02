@@ -13,20 +13,24 @@ st8 = Student('Male', 22, 'Oz', 'Rider', 'AN149')
 st9 = Student('Female', 34, 'Leyla', 'Fill', 'AN148')
 st10 = Student('Male', 32, 'Sam', 'Daytona', 'AN155')
 st11 = Student('Male', 33, 'Ros', 'Geller', 'AN1455')
+list_student = [st1, st2, st3, st4, st5, st6, st7, st8, st9, st10, st11, ]
 
 gr = Group('PD1')
 try:
-    gr.add_student(st1)
-    gr.add_student(st2)
-    gr.add_student(st3)
-    gr.add_student(st4)
-    gr.add_student(st5)
-    gr.add_student(st6)
-    gr.add_student(st7)
-    gr.add_student(st8)
-    gr.add_student(st9)
-    gr.add_student(st10)
-    gr.add_student(st11)
+    for student in list_student:
+        gr.add_student(student)
+
+    # gr.add_student(st1)
+    # gr.add_student(st2)
+    # gr.add_student(st3)
+    # gr.add_student(st4)
+    # gr.add_student(st5)
+    # gr.add_student(st6)
+    # gr.add_student(st7)
+    # gr.add_student(st8)
+    # gr.add_student(st9)
+    # gr.add_student(st10)
+    # gr.add_student(st11)
 except MaxAmountException as err:
     print(f"[!] {err.get_exception_message()}!\n"
           f"[!] --> The student: {err.first_name} {err.name} to 11 on the list,"

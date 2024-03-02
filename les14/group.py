@@ -1,7 +1,8 @@
-from ERROR_MaxAmountException import MaxAmountException
+from ERROR_MaxAmountException import MaxAmountException, MAX_STUDENT_ERROR_MESSAGE
 
 
 class Group:
+    MAX_STUDENT = 10
 
     def __init__(self, number):
         self._counter = None
@@ -13,9 +14,9 @@ class Group:
         for _ in self.group:
             self._counter += 1
 
-        if self._counter == 10:
-            raise MaxAmountException(
-                "Max Amount Students Exceeded", student.last_name, student.first_name)
+        if self._counter == self.MAX_STUDENT:
+            raise MaxAmountException(MAX_STUDENT_ERROR_MESSAGE,
+                                     student.last_name, student.first_name)
         else:
             self.group.add(student)
 
