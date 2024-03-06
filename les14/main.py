@@ -20,17 +20,6 @@ try:
     for student in list_student:
         gr.add_student(student)
 
-    # gr.add_student(st1)
-    # gr.add_student(st2)
-    # gr.add_student(st3)
-    # gr.add_student(st4)
-    # gr.add_student(st5)
-    # gr.add_student(st6)
-    # gr.add_student(st7)
-    # gr.add_student(st8)
-    # gr.add_student(st9)
-    # gr.add_student(st10)
-    # gr.add_student(st11)
 except MaxAmountException as err:
     print(f"[!] {err.get_exception_message()}!\n"
           f"[!] --> The student: {err.first_name} {err.name} to 11 on the list,"
