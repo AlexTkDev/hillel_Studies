@@ -22,7 +22,7 @@ from dataclasses import dataclass
 #     },
 # }
 
-ALPHAVANTAGE_API_KEY = "V2V43QAQ8RILGBOW"
+ALPHAVANTAGE_API_KEY = "FHR1UORM8X8GINQK"
 MIDDLE_CURRENCY = "CHF"
 
 
@@ -60,7 +60,8 @@ class Price:
 
 def convert(value: float, currency_from: str, currency_to: str) -> float:
     response: requests.Response = requests.get(
-        f"https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency={currency_from}&to_currency={currency_to}&apikey={ALPHAVANTAGE_API_KEY}"
+        f"https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency="
+        f"{currency_from}&to_currency={currency_to}&apikey={ALPHAVANTAGE_API_KEY}"
     )
     result: dict = response.json()
     # Response example
